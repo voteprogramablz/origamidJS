@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    background-color: rgb(200, 160, 86);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30vh;
+}
+
+.cronTitle {
+    font-size: 5rem;
+}
+
+.cronometro {
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.cronometro span {
+    padding: .175rem;
+    font-size: 1.5rem;
+}
+
+.btn {
+    background-color: rgb(1, 200, 1);
+    font-size: 1.3rem;
+    padding: 4px;
+    color: white;
+    font-weight: bold;
+    width: 120px;
+    height: 50px;
+}
+
+.btn:hover{
+    cursor: pointer;
+    background-color: rgba(1, 200, 1, 0.6);
+}
+
+.btn.active {
+    background-color: rgb(255, 0, 0);
+}
+
+.btn.active:hover {
+    background-color: rgba(255, 0, 0, 0.753);
+}
+
+.btn.reset {
+    display: none;
+    background-color: rgba(207, 47, 7, 0.863);
+}
+
+.btn.reset:hover {
+    background-color: rgba(207, 47, 7, 0.657);
+}

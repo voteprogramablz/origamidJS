@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>setInterval and setTimeout</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="cronTitle">Cronômetro</h1>
+        <div class="cronometro">
+            <span class="hours" data-hours>00</span>
+            :
+            <span class="minutes" data-min>00</span>
+            :
+            <span class="seconds" data-sec>00</span>
+            .
+            <span class="millisec" data-msec>00</span>
+        </div>
+        <div data-btnContainer>
+            <button class="btn reset" data-btnReset>Resetar</button>
+            <button class="btn" data-btn>Iniciar</button>
+        </div>
+    </div>
+    
+    <script type="module" src="js/script.js"></script>
+</body>
+</html>
