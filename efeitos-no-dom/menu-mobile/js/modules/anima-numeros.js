@@ -13,7 +13,7 @@ export default function initAnimaNumeros() {
                     numero.innerText = total;
                     clearInterval(timer)
                 }
-            }, 25 * Math.random());
+            }, 30 * Math.random());
         });
     };
     
@@ -26,7 +26,6 @@ export default function initAnimaNumeros() {
     }
     
     const observerTarget = document.querySelector('.numeros')
-    // console.log(observerTarget);
     const observer = new MutationObserver(handleMutation);
     
     observer.observe(observerTarget, {attributes: true})

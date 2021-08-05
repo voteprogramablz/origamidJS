@@ -3,7 +3,7 @@ export default function initScrollAnimation() {
     const sections = document.querySelectorAll('[data-scroll="js-scroll"]')
     //If "sections const" catch any element the function will continue
     if(sections.length) {
-        const halfOfWindow = window.innerHeight * 0.7;
+        const halfOfWindow = window.innerHeight * 0.6;
         
         function showElementsOnScroll() {
             sections.forEach(section => {
