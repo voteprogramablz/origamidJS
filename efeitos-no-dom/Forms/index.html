@@ -49,25 +49,18 @@
         
         <label for="textarea">Mensagem</label>
         <textarea name="mensagem" id="mensagem"></textarea>
-        <span class="texto"></span>
+
     </form>
 
     <script>
         const contato = document.querySelector('#contato')
-        const texto = document.querySelector('.texto')
+        const dados = {};
 
-        function handleKeyUp(event) {
-            const target = event.target
-            contato.nome.setCustomValidity('PREENCHE DIREITO SEU PORRA')
-            console.log(event);
-
-            if(!target.checkValidity()){
-                target.classList.add('invalido')
-                target.nextElementSibling.innerText = target.validationMessage;
-            }
-            texto.innerText = target.value
+        function handleChange({target}) {
+            dados[target.name] = target.value
+            console.log(dados);
         }
-        contato.addEventListener('keyup', handleKeyUp)
+        contato.addEventListener('change', handleChange)
     </script>
 </body>
 </html>
