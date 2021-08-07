@@ -4,7 +4,6 @@ const btn = document.querySelector('.btn')
 
 controles.addEventListener(['change'], handleChange)
 
-
 const handleStyle = {
     element: btn,
     backgroundColor(value) {
@@ -32,21 +31,36 @@ const handleStyle = {
         this.element.style.fontFamily = value;
     },
     fontSize(value) {
-        this.element.style.fontSize = value + 'rem';
+        this.element.style.fontSize = value * 0.1 + 'rem';
     },
 }
 
-function handleChange(event) {
-    const name = event.target.name
-    const value = event.target.value
+function handleChange({target}) {
+    const name = target.name
+    const value = target.value
     
     handleStyle[name](value);
 
-    showCss()
+    saveValuesOnLocalStorage(name, value);
+    showCss();
+}
+
+function saveValuesOnLocalStorage (name, value) {
+    localStorage[name] = value;
+}
+
+function setValues() {
+    const properties = Object.keys(localStorage);
+
+    properties.forEach( propertie => {
+        controles.elements[propertie].value = localStorage[propertie]
+        handleStyle[propertie](localStorage[propertie])
+    })
+    showCss();
 }
 
 function showCss() {
-    cssText.innerHTML ='<span>' + btn.style.cssText.split('; ').join('; </span> <span>')
-
-    console.log(btn.style.cssText.split('; ').join('; </span> <span>'));
+    cssText.innerHTML ='<span>' + btn.style.cssText.split('; ').join('; </span> <span>');
 }
+
+setValues();
