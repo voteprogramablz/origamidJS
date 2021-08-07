@@ -1,7 +1,9 @@
 const controles = document.querySelector('#controles');
 const cssText = document.querySelector('.css');
 const btn = document.querySelector('.btn')
+const btnReset = document.querySelector('#reset')
 
+btnReset.addEventListener('click', handleReset)
 controles.addEventListener(['change'], handleChange)
 
 const handleStyle = {
@@ -40,18 +42,20 @@ function handleChange({target}) {
     const value = target.value
     
     handleStyle[name](value);
-
+    
     saveValuesOnLocalStorage(name, value);
     showCss();
+
 }
 
 function saveValuesOnLocalStorage (name, value) {
     localStorage[name] = value;
+    // localStorage.setItem(name, value); // Maneira alternativa
 }
 
 function setValues() {
     const properties = Object.keys(localStorage);
-
+    
     properties.forEach( propertie => {
         controles.elements[propertie].value = localStorage[propertie]
         handleStyle[propertie](localStorage[propertie])
@@ -63,4 +67,13 @@ function showCss() {
     cssText.innerHTML ='<span>' + btn.style.cssText.split('; ').join('; </span> <span>');
 }
 
+function handleReset(event){
+    event.preventDefault()
+    localStorage.clear()
+    btn.innerText = 'Insira um texto'
+    btn.removeAttribute('style')
+    showCss()
+}
+
 setValues();
+
