@@ -4,10 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Promises</title>
+    <title>Fetch</title>
+    <style>
+        label{
+            display: block;
+        }
+        span{
+            display: block;
+        }
+    </style>
 </head>
 <body>
-    
+    <form id="endereco">
+        <label for="cep">Digite seu cep</label>
+        <input type="number" name="cep" id="cep" placeholder="Seu cep aqui">
+        <button data-searchCep>Buscar</button>
+        <span data-res></span>
+    </form>
+    <hr>
+    <div>
+        <h2>Valor dos bitcoins em brl</h2>
+        <span data-bitcoin></span>
+    </div>
+    <hr>
+    <div>
+        <h2>Piada do Chucknorris</h2>
+        <span data-chuckNorris></span>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
