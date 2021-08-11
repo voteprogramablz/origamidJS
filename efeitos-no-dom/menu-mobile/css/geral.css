@@ -310,3 +310,10 @@ content:'';
 [data-semana].aberto::after {
     background: #0f0;
 }
+
+.btc-preco {
+    background: #0f0;
+    padding: .2rem .5rem;
+    font-weight: bold;
+    border-radius: 2px;
+}
